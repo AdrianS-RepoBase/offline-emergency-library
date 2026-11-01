@@ -1,6 +1,6 @@
 # Offline Maps — How to View Them (PC or Phone)
 
-The `OsmAnd\` folder contains offline maps of every US state/region (`.obf.zip` files).
+The `OsmAnd\` folder contains offline maps of every German Bundesland (`.obf.zip` files).
 You can use them **on a computer (no phone needed)** or **on a phone/tablet**. Both work
 with **no internet**. Dependencies for each are bundled or explained below.
 

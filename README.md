@@ -17,17 +17,19 @@ works with **no internet**.
 | **Offline AI chat** | 3 local AI models (Llama 3.2 3B, Llama 3.1 8B, Qwen2.5 7B) + CPU & GPU engines (llama.cpp) | ~11 GB | CPU only (GPU optional) |
 | **Offline doc-Q&A** | GPT4All — ask an AI questions about your PDFs, with citations | ~0.7 GB | CPU, one-time install |
 | **Wikipedia** | Full English Wikipedia article text (compressed) | ~24 GB | Kiwix (or archival) |
-| **Offline US maps** | Every US state/region map (OsmAnd `.obf`) + **bundled desktop viewer** (OsmAndMapCreator + portable Java) + **bundled Android app (APK)** | ~17 GB (+~0.4 GB tools) | **PC (no phone) or phone** |
+| **Offline Germany maps** | Every German Bundesland map (OsmAnd `.obf`) + **bundled desktop viewer** (OsmAndMapCreator + portable Java) + **bundled Android app (APK)** | ~5-6 GB (+~0.4 GB tools) | **PC (no phone) or phone** |
 | **Repair archive** | iFixit — cars, appliances, electronics, phones | ~3.4 GB | Kiwix |
 | **DIY archive** | Appropedia — plumbing, electrical, construction, energy, water, food | ~0.6 GB | Kiwix |
 | **Medical** | Offline medical Wikipedia (WikiMed) + curated medical guide | ~1.8 GB | Kiwix |
 | **Survival** | Post-disaster, water, food prep, knots (zimgit) | ~0.8 GB | Kiwix |
 | **Army manuals** | Public-domain US Army field/technical manuals (survival, first aid, hand tools, carpentry, auto mechanics, rigging, field cooking) | ~0.2 GB | Any browser (PDF) |
 | **Medical books** | *Where There Is No Doctor / No Dentist*, *Ship's Medicine Chest* | ~45 MB | Any browser (PDF) |
-| **Radio guide** | How ham/CB/shortwave/GMRS radio works + emergency comms | tiny | Any browser |
+| **Radio guide** | Germany: CB, PMR446, Freenet, amateur radio, FM/DAB+ warnings + emergency comms | tiny | Any browser |
 | **Kiwix reader** | Portable app to read all `.zim` archives (no install) | ~0.15 GB | — |
 | **Phone apps** | Bundled Android APKs (Kiwix + OsmAnd) to port the library to a phone offline | ~0.4 GB | sideload on Android |
-| **Total** | | **≈ 60 GB** | |
+| **Dictionary** | Wiktionary de + en (Kiwix) — more reliable than the AI for single words/terms | ~3-5 GB | Kiwix |
+| **Deutschland** | BBK-Ratgeber (PDF), German Wikipedia/Wikibooks/Wikivoyage (ZIM, no pictures) + German Wikipedia text dump | ~15-20 GB | Kiwix / browser |
+| **Total** | | **≈ 75-80 GB** | |
 
 Everything is **free and legally redistributable** — open-weight AI models, openly-licensed
 Kiwix archives, and public-domain US-government manuals. **No piracy.**
@@ -160,7 +162,7 @@ Both pages link to each component's guide:
 | Flag | Effect | Saves |
 |---|---|---|
 | `-SkipWikipedia` | Don't download the 24 GB Wikipedia dump | ~24 GB |
-| `-SkipMaps` | Don't download the US OsmAnd maps | ~17 GB |
+| `-SkipMaps` | Don't download the Germany OsmAnd maps | ~5-6 GB |
 | `-SkipModels` | Skip the large 8B/7B AI models (keeps the small 3B) | ~9 GB |
 
 Example: `./Get-OfflineLibrary.ps1 -Destination "F:\" -SkipWikipedia -SkipMaps`

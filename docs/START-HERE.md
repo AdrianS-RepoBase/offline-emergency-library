@@ -25,7 +25,8 @@ This drive is a self-contained **offline survival library + AI**. Everything wor
 | `Manuals\Radio-Communications\` | How ham/CB/shortwave radio works + emergency comms | Browser | `RADIO-GUIDE.html` |
 | `Medical\` | Offline medical Wikipedia + first-aid books | ZIM→Kiwix, PDF→browser | `Medical\READ-ME-FIRST.html` |
 | `Wikipedia\` | Full Wikipedia article text (compressed) | Via Kiwix / archival | — |
-| `OsmAnd\` | Offline US maps — view on **PC (no phone)** or phone | PC: `MapViewer-Desktop\VIEW-MAPS-ON-PC.bat`; phone: bundled APK | `OsmAnd\HOW-TO-VIEW-MAPS.html` |
+| `OsmAnd\` | Offline Germany maps — view on **PC (no phone)** or phone | PC: `MapViewer-Desktop\VIEW-MAPS-ON-PC.bat`; phone: bundled APK | `OsmAnd\HOW-TO-VIEW-MAPS.html` |
+| `Deutschland\` | German sources: BBK guides, German Wikipedia/Wikibooks/Wikivoyage, **offline dictionary** (`Woerterbuch\`) | PDF→browser, ZIM→Kiwix | `Deutschland\Woerterbuch\HOW-TO-USE-DICTIONARY.html` |
 | `Kiwix-Reader\` | The reader for all `.zim` archives | Portable app | `Kiwix-Reader\HOW-TO-USE-KIWIX.html` |
 | `Phone-Apps\` | Android apps (Kiwix + OsmAnd) to port the library to a phone, offline | Sideload the APKs | `Phone-Apps\USE-ON-PHONE.html` |
 
