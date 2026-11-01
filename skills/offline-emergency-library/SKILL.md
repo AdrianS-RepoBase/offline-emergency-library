@@ -3,7 +3,7 @@ name: offline-emergency-library
 description: >
   Download a complete offline, no-internet "emergency library" to a drive the user
   chooses: an offline AI (chat models + CPU/GPU engine), an offline document-Q&A app
-  (GPT4All), full Wikipedia article text, offline US maps (OsmAnd), survival/repair/
+  (GPT4All), full Wikipedia article text, offline Germany maps (OsmAnd), survival/repair/
   medical archives (Kiwix ZIM: iFixit, Appropedia, WikiMed, survival/water/food/knots),
   public-domain US Army field manuals + medical PDFs, the Kiwix reader, launchers, and
   full documentation (Markdown + HTML). Invoke for requests like "download the offline
@@ -50,7 +50,7 @@ When this skill is invoked, your job is simple:
   tar, built in; `unzip` enables the desktop map viewer). Pick the installer matching the
   user's OS.
 - Everything downloaded is **free and legally redistributable**: open-weight AI models,
-  openly-licensed Kiwix archives, and public-domain US-government manuals. No piracy.
+  openly-licensed Kiwix archives, and public-domain US-government manuals, and German sources (BBK guides, German Wikipedia/Wikibooks/Wikivoyage). No piracy.
 - If the user is low on disk space, you *may* mention the optional flags
   `-SkipWikipedia`, `-SkipMaps`, `-SkipModels` — but do not prompt for them unless asked.
 

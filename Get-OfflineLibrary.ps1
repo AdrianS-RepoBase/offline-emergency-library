@@ -2,7 +2,7 @@
   Get-OfflineLibrary.ps1
   One-shot downloader for the Offline Emergency Library.
   Downloads: offline AI (3 models + CPU/GPU engines), GPT4All doc-Q&A, full Wikipedia
-  (article text), offline US maps (OsmAnd), survival/repair/medical archives (Kiwix ZIM),
+  (article text), offline Germany maps (OsmAnd), survival/repair/medical archives (Kiwix ZIM),
   public-domain Army field manuals + medical PDFs, the Kiwix reader, launchers, and all
   documentation (Markdown + HTML).
 
@@ -54,7 +54,8 @@ $dirs = @(
  'Manuals','Manuals\ArmyFieldManuals','Manuals\Repair-iFixit','Manuals\DIY-Appropedia',
  'Manuals\Survival-Water-Food','Manuals\Radio-Communications',
  'Medical','Medical\WikiMed','Medical\zimgit-medicine','Medical\Manuals-PDF',
- 'Wikipedia','OsmAnd','Kiwix-Reader','Kiwix-Reader\app','Phone-Apps'
+ 'Wikipedia','OsmAnd','Kiwix-Reader','Kiwix-Reader\app','Phone-Apps',
+ 'Deutschland','Deutschland\BBK-Ratgeber','Deutschland\ZIM-Deutsch'
 )
 foreach($d in $dirs){ New-Item -ItemType Directory -Force (Join-Path $Root $d) | Out-Null }
 
@@ -131,6 +132,9 @@ $zims = @(
  @{dir='https://download.kiwix.org/zim/other/';  pre='zimgit-knots_en_';          d='Manuals\Survival-Water-Food'}
  @{dir='https://download.kiwix.org/zim/wikipedia/'; pre='wikipedia_en_medicine_maxi_'; d='Medical\WikiMed'}
  @{dir='https://download.kiwix.org/zim/other/';  pre='zimgit-medicine_en_';       d='Medical\zimgit-medicine'}
+ @{dir='https://download.kiwix.org/zim/wikipedia/';  pre='wikipedia_de_all_nopic_'; d='Deutschland\ZIM-Deutsch'}
+ @{dir='https://download.kiwix.org/zim/wikibooks/';  pre='wikibooks_de_all_maxi_';  d='Deutschland\ZIM-Deutsch'}
+ @{dir='https://download.kiwix.org/zim/wikivoyage/'; pre='wikivoyage_de_all_maxi_'; d='Deutschland\ZIM-Deutsch'}
 )
 foreach($z in $zims){
   $name = Latest-Zim $z.dir $z.pre
@@ -165,20 +169,35 @@ foreach($p in $pdfs){
   }catch{ Log "pdf ERROR $($p.n): $($_.Exception.Message)" }
 }
 
+# Deutschland: BBK-Ratgeber (amtliche Publikationen)
+Log '=== [6b] Deutschland: BBK-Ratgeber (PDF) ==='
+$bbk = @(
+ @{u='https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Ratgeber/ratgeber-notfallvorsorge.pdf?__blob=publicationFile'; n='BBK Ratgeber Notfallvorsorge.pdf'}
+ @{u='https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Stromausfall/stromausfall-vorsorge-selbsthilfe.pdf?__blob=publicationFile'; n='BBK Stromausfall Vorsorge und Selbsthilfe.pdf'}
+)
+foreach($b in $bbk){
+  $out = Join-Path $Root "Deutschland\BBK-Ratgeber\$($b.n)"
+  curl.exe -fL -C - --retry 5 --retry-delay 5 -s -A (UA) -o $out $b.u
+  $ok = (Test-Path $out) -and ([Text.Encoding]::ASCII.GetString([IO.File]::ReadAllBytes($out)[0..3]) -eq '%PDF')
+  if($ok){ Log "pdf: $($b.n)" } else { Remove-Item $out -Force -ErrorAction SilentlyContinue; Log "pdf: NOT AVAILABLE $($b.n) (URL evtl. geaendert: bbk.bund.de > Mediathek > Publikationen)" }
+}
+
 # ================================================================ 7. Wikipedia + Maps
 if(-not $SkipWikipedia){
   Log '=== [7/8] Wikipedia (article text, compressed ~24 GB) ==='
   Fetch 'https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2' (Join-Path $Root 'Wikipedia\enwiki-latest-pages-articles.xml.bz2')
+  Log 'Wikipedia (deutsch, Artikeltext)'
+  Fetch 'https://dumps.wikimedia.org/dewiki/latest/dewiki-latest-pages-articles.xml.bz2' (Join-Path $Root 'Wikipedia\dewiki-latest-pages-articles.xml.bz2')
 } else { Log '=== [7/8] Wikipedia SKIPPED ===' }
 
 if(-not $SkipMaps){
-  Log '=== [8/8] Offline US maps (OsmAnd, ~17 GB) ==='
+  Log '=== [8/8] Offline Germany maps (OsmAnd, all Bundeslaender) ==='
   try{
     $idxFile = Join-Path $env:TEMP 'osmand_idx.xml'
     curl.exe -s 'https://download.osmand.net/get_indexes' -o $idxFile
     [xml]$idx = Get-Content $idxFile
-    $us = $idx.osmand_regions.region | Where-Object { $_.name -like 'US_*' -and $_.type -eq 'map' }
-    Log "osmand: $($us.Count) US map files"
+    $us = $idx.osmand_regions.region | Where-Object { $_.name -like 'Germany_*' -and $_.type -eq 'map' }
+    Log "osmand: $($us.Count) Germany map files"
     foreach($r in $us){
       $out = Join-Path $Root "OsmAnd\$($r.name)"
       Fetch "https://download.osmand.net/download.php?standard=yes&file=$($r.name)" $out

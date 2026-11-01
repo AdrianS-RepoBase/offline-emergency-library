@@ -145,8 +145,8 @@ and practice.
   away — because HF signals bounce worldwide.
 - **What to listen for:**
   - **International broadcasters** (news from outside the affected area).
-  - **NOAA Weather Radio** (VHF **162.400–162.550 MHz**) — continuous US weather &
-    emergency alerts. *Every emergency kit should have a NOAA weather radio.*
+  - **Germany:** no NOAA radio. Use a battery/crank **FM/DAB+ radio** (public broadcasters
+    carry Katwarn/NINA/DWD warnings), plus the **NINA** and **DWD WarnWetter** apps while online. Emergency number **112**.
   - **Ham bands** (40m/20m) — to hear emergency nets and relays.
   - **AM/FM broadcast** and **Emergency Alert System (EAS)** on a normal radio.
 - **Modes:** Broadcasts are usually **AM**; ham/utility voice is often **SSB**
@@ -206,7 +206,7 @@ Zulu. Numbers: say digits individually ("one-two-zero").
 
 ## 9. A sensible emergency radio kit (shopping / checklist)
 
-- [ ] **NOAA weather radio** (hand-crank/solar + battery) — alerts & forecasts.
+- [ ] **FM/DAB+ crank radio** (hand-crank/solar + battery) — warnings & forecasts (DE: no NOAA).
 - [ ] **Shortwave receiver with SSB** — hear news & ham traffic worldwide (RX only).
 - [ ] **A pair+ of GMRS radios** (and a **GMRS license**) — family/group, best bang
       for buck. FRS works with no license at shorter range.
@@ -233,7 +233,7 @@ Fill in your group's agreed channels and local repeaters, then print this page.
  CB emergency / help ....... Channel 9
  CB highway / travel ....... Channel 19
  Ham 2m simplex calling .... 146.520 MHz  (FM)
- NOAA Weather Radio ........ 162.400 / 162.425 / 162.450 /
+ (US only) NOAA Weather Radio ... 162.400 / 162.425 / 162.450 /
                              162.475 / 162.500 / 162.525 / 162.550 MHz
  FRS/GMRS family channel ... _______   (GMRS license #: __________)
 

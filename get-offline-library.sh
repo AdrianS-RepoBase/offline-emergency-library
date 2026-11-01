@@ -50,7 +50,8 @@ for d in AI-Offline AI-Offline/engine AI-Offline/models AI-Offline/DocReader-GPT
          Manuals Manuals/ArmyFieldManuals Manuals/Repair-iFixit Manuals/DIY-Appropedia \
          Manuals/Survival-Water-Food Manuals/Radio-Communications \
          Medical Medical/WikiMed Medical/zimgit-medicine Medical/Manuals-PDF \
-         Wikipedia OsmAnd Kiwix-Reader Phone-Apps; do
+         Wikipedia OsmAnd Kiwix-Reader Phone-Apps \
+         Deutschland Deutschland/BBK-Ratgeber Deutschland/ZIM-Deutsch; do
   mkdir -p "$ROOT/$d"
 done
 
@@ -124,6 +125,10 @@ add_zim "https://download.kiwix.org/zim/other/"     "zimgit-food-preparation_en_
 add_zim "https://download.kiwix.org/zim/other/"     "zimgit-knots_en_"          "$ROOT/Manuals/Survival-Water-Food"
 add_zim "https://download.kiwix.org/zim/wikipedia/" "wikipedia_en_medicine_maxi_" "$ROOT/Medical/WikiMed"
 add_zim "https://download.kiwix.org/zim/other/"     "zimgit-medicine_en_"       "$ROOT/Medical/zimgit-medicine"
+# Deutschland: deutschsprachige Archive
+add_zim "https://download.kiwix.org/zim/wikipedia/" "wikipedia_de_all_nopic_"   "$ROOT/Deutschland/ZIM-Deutsch"
+add_zim "https://download.kiwix.org/zim/wikibooks/" "wikibooks_de_all_maxi_"    "$ROOT/Deutschland/ZIM-Deutsch"
+add_zim "https://download.kiwix.org/zim/wikivoyage/" "wikivoyage_de_all_maxi_"  "$ROOT/Deutschland/ZIM-Deutsch"
 
 # ================================================================ 6. PDFs
 log "=== [6/8] Public-domain manuals (PDF) ==="
@@ -151,18 +156,30 @@ get_pdf "bwb_S0-EJI-512"                                     "Where There Is No 
 get_pdf "where-there-is-no-dentist-13th-printing-2010"       "Where There Is No Dentist.pdf" "$MPDF"
 get_pdf "shipsmedicineche0000medi"                           "Ships Medicine Chest and First Aid at Sea.pdf" "$MPDF"
 
+# Deutschland: BBK-Ratgeber (Bundesamt fuer Bevoelkerungsschutz, amtliche Publikationen)
+log "=== [6b] Deutschland: BBK-Ratgeber (PDF) ==="
+get_url_pdf(){ # url  localname  destdir   (-f: kein HTML-Fehlerseiten-Muell als PDF speichern)
+  if curl -fL -C - --retry 5 --retry-delay 5 -s -A "$UA" -o "$3/$2" "$1" && head -c4 "$3/$2" | grep -q '%PDF'; then log "pdf: $2"
+  else rm -f "$3/$2"; log "pdf: NOT AVAILABLE $2 (URL evtl. geaendert: https://www.bbk.bund.de/ -> Mediathek -> Publikationen)"; fi
+}
+BBK="$ROOT/Deutschland/BBK-Ratgeber"
+get_url_pdf "https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Ratgeber/ratgeber-notfallvorsorge.pdf?__blob=publicationFile" "BBK Ratgeber Notfallvorsorge.pdf" "$BBK"
+get_url_pdf "https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Stromausfall/stromausfall-vorsorge-selbsthilfe.pdf?__blob=publicationFile" "BBK Stromausfall Vorsorge und Selbsthilfe.pdf" "$BBK"
+
 # ================================================================ 7. Wikipedia + Maps
 if [ "$SKIP_WIKI" = 0 ]; then
   log "=== [7/8] Wikipedia (article text, ~24 GB) ==="
   fetch "https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2" "$ROOT/Wikipedia/enwiki-latest-pages-articles.xml.bz2"
+  log "Wikipedia (deutsch, Artikeltext)"
+  fetch "https://dumps.wikimedia.org/dewiki/latest/dewiki-latest-pages-articles.xml.bz2" "$ROOT/Wikipedia/dewiki-latest-pages-articles.xml.bz2"
 else log "=== [7/8] Wikipedia SKIPPED ==="; fi
 
 if [ "$SKIP_MAPS" = 0 ]; then
-  log "=== [8/8] Offline US maps (OsmAnd, ~17 GB) ==="
+  log "=== [8/8] Offline Germany maps (OsmAnd, all Bundeslaender) ==="
   curl -s "https://download.osmand.net/get_indexes" -o "$ROOT/OsmAnd/_index.xml"
-  grep -oE 'name="US_[^"]+\.obf\.zip"' "$ROOT/OsmAnd/_index.xml" | sed -E 's/name="([^"]+)"/\1/' | grep -viE 'wiki|srtm|depth' | sort -u > "$ROOT/OsmAnd/_filelist.txt"
+  grep -oE 'name="Germany_[^"]+\.obf\.zip"' "$ROOT/OsmAnd/_index.xml" | sed -E 's/name="([^"]+)"/\1/' | grep -viE 'wiki|srtm|depth' | sort -u > "$ROOT/OsmAnd/_filelist.txt"
   n=$(wc -l < "$ROOT/OsmAnd/_filelist.txt" | tr -d ' ')
-  log "osmand: $n US map files"
+  log "osmand: $n Germany map files"
   while IFS= read -r fn; do [ -n "$fn" ] && fetch "https://download.osmand.net/download.php?standard=yes&file=$fn" "$ROOT/OsmAnd/$fn"; done < "$ROOT/OsmAnd/_filelist.txt"
 
   # desktop map viewer (OsmAndMapCreator + portable Java) — use maps on a PC, no phone
