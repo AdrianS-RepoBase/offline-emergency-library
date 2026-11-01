@@ -51,7 +51,7 @@ for d in AI-Offline AI-Offline/engine AI-Offline/models AI-Offline/DocReader-GPT
          Manuals/Survival-Water-Food Manuals/Radio-Communications \
          Medical Medical/WikiMed Medical/zimgit-medicine Medical/Manuals-PDF \
          Wikipedia OsmAnd Kiwix-Reader Phone-Apps \
-         Deutschland Deutschland/BBK-Ratgeber Deutschland/ZIM-Deutsch; do
+         Deutschland Deutschland/BBK-Ratgeber Deutschland/ZIM-Deutsch Deutschland/Woerterbuch; do
   mkdir -p "$ROOT/$d"
 done
 
@@ -129,6 +129,8 @@ add_zim "https://download.kiwix.org/zim/other/"     "zimgit-medicine_en_"       
 add_zim "https://download.kiwix.org/zim/wikipedia/" "wikipedia_de_all_nopic_"   "$ROOT/Deutschland/ZIM-Deutsch"
 add_zim "https://download.kiwix.org/zim/wikibooks/" "wikibooks_de_all_maxi_"    "$ROOT/Deutschland/ZIM-Deutsch"
 add_zim "https://download.kiwix.org/zim/wikivoyage/" "wikivoyage_de_all_maxi_"  "$ROOT/Deutschland/ZIM-Deutsch"
+add_zim "https://download.kiwix.org/zim/wiktionary/" "wiktionary_de_all_nopic_" "$ROOT/Deutschland/Woerterbuch"
+add_zim "https://download.kiwix.org/zim/wiktionary/" "wiktionary_en_all_nopic_" "$ROOT/Deutschland/Woerterbuch"
 
 # ================================================================ 6. PDFs
 log "=== [6/8] Public-domain manuals (PDF) ==="
@@ -287,6 +289,7 @@ place_doc "Manuals-READ-ME-FIRST" "$ROOT/Manuals/READ-ME-FIRST"
 place_doc "Medical-READ-ME-FIRST" "$ROOT/Medical/READ-ME-FIRST"
 place_doc "RADIO-GUIDE"           "$ROOT/Manuals/Radio-Communications/RADIO-GUIDE"
 place_doc "HOW-TO-VIEW-MAPS"      "$ROOT/OsmAnd/HOW-TO-VIEW-MAPS"
+place_doc "HOW-TO-USE-DICTIONARY" "$ROOT/Deutschland/Woerterbuch/HOW-TO-USE-DICTIONARY"
 place_doc "USE-ON-PHONE"          "$ROOT/Phone-Apps/USE-ON-PHONE"
 
 # ================================================================ README index

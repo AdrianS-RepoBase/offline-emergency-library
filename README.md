@@ -24,9 +24,10 @@ works with **no internet**.
 | **Survival** | Post-disaster, water, food prep, knots (zimgit) | ~0.8 GB | Kiwix |
 | **Army manuals** | Public-domain US Army field/technical manuals (survival, first aid, hand tools, carpentry, auto mechanics, rigging, field cooking) | ~0.2 GB | Any browser (PDF) |
 | **Medical books** | *Where There Is No Doctor / No Dentist*, *Ship's Medicine Chest* | ~45 MB | Any browser (PDF) |
-| **Radio guide** | How ham/CB/shortwave/GMRS radio works + emergency comms | tiny | Any browser |
+| **Radio guide** | Germany: CB, PMR446, Freenet, amateur radio, FM/DAB+ warnings + emergency comms | tiny | Any browser |
 | **Kiwix reader** | Portable app to read all `.zim` archives (no install) | ~0.15 GB | — |
 | **Phone apps** | Bundled Android APKs (Kiwix + OsmAnd) to port the library to a phone offline | ~0.4 GB | sideload on Android |
+| **Dictionary** | Wiktionary de + en (Kiwix) — more reliable than the AI for single words/terms | ~3-5 GB | Kiwix |
 | **Deutschland** | BBK-Ratgeber (PDF), German Wikipedia/Wikibooks/Wikivoyage (ZIM, no pictures) + German Wikipedia text dump | ~15-20 GB | Kiwix / browser |
 | **Total** | | **≈ 75-80 GB** | |
 

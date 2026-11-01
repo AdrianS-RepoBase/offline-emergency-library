@@ -1,262 +1,253 @@
-# Emergency Radio Communications Guide
-### Ham (Amateur), CB, Shortwave, GMRS/FRS & MURS — how they work and how to use them
+# Emergency Radio Communications Guide — Germany
+### Funk im Notfall: CB, PMR446, Freenet, Amateurfunk, Rundfunk-Empfang (Deutschland)
 
-This guide explains, in plain language, how to communicate by radio when the
-internet and phones are down. It covers what each type of radio is, what it can do,
-which frequencies/channels matter in an emergency, and the basic procedures for
-calling for help.
+How to communicate and stay informed by radio when phones and internet are down, **under
+German rules** (Bundesnetzagentur, BNetzA). German terms are given in *italics* — handy
+with the offline dictionary in this kit (`Deutschland\Woerterbuch`).
 
-> **Legal note (normal times):** Transmitting on **ham (amateur)** frequencies
-> requires a license (easy to get — see below). **GMRS** requires a cheap license
-> (no test). **CB, FRS, MURS** need **no license**. **Shortwave listening** needs no
-> license (you're only receiving). **In a genuine life-threatening emergency, FCC
-> rules (47 CFR §97.405) let anyone use any means of radio to call for help.**
-> Listening is always legal. Learn and practice *before* you need it.
+> **Rules in normal times:** **CB, PMR446 and Freenet** are license-free
+> (*Allgemeinzuteilung*, no registration, no fees) **but only with type-approved
+> equipment** (CE mark) and **no modification** of power or antenna. **Amateur radio**
+> needs a **license + call sign** from the BNetzA (exam). **Receiving** broadcasts is
+> always fine. **Listening to authority/rescue radio (BOS, *Behördenfunk*) or
+> commercial traffic is not allowed.**
+> In a genuine life-threatening emergency, using any available radio to call for help
+> can be justified (*rechtfertigender Notstand*, § 34 StGB) — no guarantee, so learn
+> and practice **before** you need it. This guide is not legal advice; rules change —
+> check bundesnetzagentur.de when online.
+
+---
+
+## 0. First: official emergency channels (not radio)
+
+| What | How |
+|---|---|
+| Fire / rescue / ambulance | **112** (also works on any mobile network without SIM/credit; EU-wide) |
+| Police | **110** |
+| Non-urgent medical help | **116 117** (*ärztlicher Bereitschaftsdienst*) |
+| Warnings | **NINA** and **Katwarn** apps, **DWD WarnWetter**, **Cell Broadcast** (*DE-Alert*, pops up on phones), radio, sirens |
+| Sirens | **Rising/falling tone for 1 min = *Warnung*** → turn on radio / warning app, follow instructions. **Constant tone for 1 min = *Entwarnung*** (all clear). |
+
+If networks are down, **112 may not work** — then radio and getting to a fire station /
+police station / *Anlaufstelle* ("Katastrophenschutz-Leuchtturm", where set up) matter.
 
 ---
 
 ## 1. The quick version — what to grab and what to know
 
-| Need | Best tool | License | Range (typical) |
+| Need | Best tool | License | Typical range |
 |---|---|---|---|
-| Talk to family nearby (same property / neighborhood) | **FRS / GMRS** walkie-talkie | FRS none; GMRS cheap | 0.5–2 mi (up to 5+ with GMRS + height) |
-| Talk across town / coordinate a group | **GMRS** (with repeater) or **Ham VHF/UHF** | GMRS cheap; Ham test | 5–50 mi via repeater |
-| Talk regionally / long distance / into other states | **Ham HF** | Ham (General class) | 100s–1000s mi |
-| Hear news & official broadcasts from anywhere | **Shortwave receiver** | none (listening) | Worldwide |
-| Road / vehicle convoy, truckers | **CB** | none | 1–15 mi |
+| Family/group nearby (property, neighborhood, hiking) | **PMR446** or **Freenet** handheld | none | 0.5–3 km |
+| Vehicle-to-vehicle, convoys | **CB (27 MHz)** | none | 1–15 km (more in open terrain) |
+| Town/region coordination, repeaters | **Amateur radio 2 m / 70 cm** | Class E / A (or N) | 5–50 km via repeater |
+| Long distance / outside the affected region | **Amateur radio HF** | Class A (Class E: limited HF) | 100s–1000s km |
+| News, warnings, official info | **FM + DAB+ radio** (battery/crank) | none (receive) | regional |
+| Hear the world | **Shortwave receiver** | none (receive) | worldwide |
 
-**Three things everyone should know:**
-1. **Monitor, don't just transmit.** A cheap receiver tells you what's happening.
-2. **Higher antenna = more range.** Antenna height matters more than watts.
-3. **Have a plan:** agree on a channel/frequency and check-in times with your group
-   *in advance* (write them down — see the card at the end).
-
----
-
-## 2. How radio actually works (the 60-second version)
-
-- A radio turns your voice into **radio waves** at a certain **frequency** (measured
-  in kilohertz **kHz** or megahertz **MHz**). Another radio tuned to the same
-  frequency turns the wave back into sound.
-- **Both radios must be on the same frequency/channel AND the same mode** (e.g. FM,
-  AM, SSB) to hear each other.
-- **Only one person talks at a time.** You press **PTT** (push-to-talk) to transmit,
-  release it to listen. You cannot hear others while you hold PTT.
-- **Frequency bands** behave very differently:
-  - **VHF/UHF (high frequency numbers, ~30 MHz–3 GHz):** travel in roughly straight
-    "line of sight." Great locally, blocked by hills/buildings. Used by FRS, GMRS,
-    MURS, and ham 2m/70cm. Extended by **repeaters** (see below).
-  - **HF / shortwave (low numbers, ~3–30 MHz):** can **bounce off the ionosphere**
-    and travel hundreds or thousands of miles ("skip"). Used by ham HF, CB (27 MHz),
-    and shortwave broadcasters. Range changes with time of day and the sun.
+**Three things:**
+1. **Listen first.** A cheap receiver tells you what's going on.
+2. **Higher antenna = more range**, more than watts.
+3. **Agree on channels and check-in times in advance** (card at the end).
 
 ---
 
-## 3. CB Radio (Citizens Band) — no license, simple, vehicle-friendly
+## 2. How radio works (60 seconds)
 
-- **What it is:** 40 channels around **27 MHz** (in the HF band). No license needed.
-  Cheap, everywhere, popular with truckers and off-roaders.
-- **Range:** usually **1–15 miles** (more in flat/open terrain; occasionally hundreds
-  of miles when "skip" conditions bounce signals off the ionosphere).
-- **Power limit:** 4 watts AM / 12 watts SSB (SSB radios reach farther).
-- **Key channels:**
-  - **Channel 9** — traditional **emergency / help** channel.
-  - **Channel 19** — highway / trucker channel (road conditions, traffic, convoys).
-  - **Channel 1–40** — general use; pick an unused one for your group.
-- **Modes:** Most CB is **AM**. Higher-end radios add **SSB** (USB/LSB) for more
-  range — but both radios must use the same mode.
-- **Good for:** vehicle-to-vehicle, convoys, short local coordination with zero setup.
+- Radios convert voice into **radio waves** at a **frequency** (kHz, MHz). Both radios
+  need the **same frequency and mode** (FM, AM, SSB; for digital the same system).
+- One person talks at a time (**PTT** = push-to-talk).
+- **VHF/UHF** (PMR446, Freenet, ham 2 m/70 cm): mostly line of sight — hills and
+  buildings block, **repeaters** (*Relaisfunkstellen*) extend range.
+- **HF/shortwave** (CB 27 MHz, ham HF): bounces off the ionosphere ("skip") and can
+  travel far; depends on time of day and sun.
 
 ---
 
-## 4. FRS / GMRS / MURS — the walkie-talkie families
+## 3. CB radio (*CB-Funk*) — license-free, vehicle-friendly
 
-These are the little handheld radios ("walkie-talkies"). Great for family/group.
-
-### FRS (Family Radio Service) — no license
-- The blister-pack walkie-talkies. **22 channels** in **UHF (462/467 MHz)**.
-- Low power (0.5–2 W), fixed antenna. **Range ~0.5–2 miles.**
-- No license, no setup. Good for keeping a family/group in touch on foot.
-
-### GMRS (General Mobile Radio Service) — cheap license, no test
-- Shares channels with FRS but allows **higher power (up to 50 W)**, **detachable
-  antennas**, and **repeaters** — so range can reach **5–50+ miles** via a repeater.
-- One **GMRS license (~$35, no exam)** covers your **entire family** for 10 years.
-- **Best all-round family emergency radio:** cheap, legal, powerful, easy.
-
-### MURS (Multi-Use Radio Service) — no license
-- **5 channels** in **VHF (151/154 MHz)**, up to 2 W. No license.
-- VHF often works better outdoors/rural than FRS/GMRS UHF. Good for property/farm.
+- **27 MHz.** FM: **80 channels** (the German 40 + 40 extra), AM: 40 channels.
+  Radios must be type-approved for Germany (**FM + AM, DE channel set**).
+- **Power (Germany):** FM **4 W**, AM **1 W**, SSB **12 W PEP**. Do not exceed.
+- **Key channels:** **Channel 9 = emergency/help** (*Notrufkanal*, FM and AM);
+  **Channel 19 = traffic/highway** (*Verkehrskanal*, FM). Use another free channel for your group.
+- Modes: both radios must use the same mode (FM vs AM vs SSB).
+- Good for: convoys, local coordination, zero setup, **no registration**.
+- Note: some volunteers monitor Channel 9 but there is **no guarantee** anyone does.
+  Use it as a last resort, not as a replacement for 112.
 
 ---
 
-## 5. Ham (Amateur) Radio — the serious emergency option
+## 4. PMR446 and Freenet — the walkie-talkie families
 
-**Ham radio is the backbone of emergency communications.** When everything else
-fails, hams relay health-and-welfare traffic, weather, and coordination across towns,
-states, and continents.
+### PMR446 (license-free, EU)
+- **446.0–446.2 MHz**, **16 analog channels** (plus digital channels on newer radios,
+  dPMR/DMR Tier 1).
+- **Max 0.5 W**, **fixed antenna** (no external antenna allowed). Range **~0.5–3 km**.
+- Use **CTCSS/DCS "privacy codes" only to filter**, they do **not** make a channel private.
+- Cheap, works with every brand (analog). Best default for families and groups.
 
-### Licensing (USA) — easier than you think
-Three license levels, each a multiple-choice test (questions are public — you can
-study the exact pool):
-1. **Technician** — entry level. Grants **VHF/UHF** (local, repeaters) plus some HF.
-   Enough for local/regional emergency comms. ~1 evening of study.
-2. **General** — adds most **HF** privileges → **long-distance / cross-country**.
-3. **Amateur Extra** — full privileges.
+### Freenet (license-free, Germany)
+- **149.0125–149.1125 MHz**, **6 channels**, **max 0.5 W**, fixed antenna. VHF
+  often reaches farther outdoors than UHF PMR446. Fewer radios in the field — choose
+  it **together with** PMR446 only if your group has matching devices.
 
-> Get at least a **Technician** license now while it's easy, and ideally **General**
-> so you can use HF for long distance. In a true emergency you may legally transmit
-> without a license to save life/property — but you'll be far more effective if you've
-> practiced.
-
-### The main ham bands and what they do
-- **2 meters (144–148 MHz, VHF)** and **70 cm (420–450 MHz, UHF):** local
-  simplex + **repeaters**. Your everyday "talk around town" bands.
-- **HF bands (e.g. 80m, 40m, 20m):** long distance.
-  - **40m (7 MHz):** reliable regional (100s of miles), day and night — great for a
-    state/region emergency net.
-  - **20m (14 MHz):** long-distance (cross-country / international) in daytime.
-  - **80m (3.5 MHz):** regional at night.
-
-### Repeaters — how hams get range from a handheld
-A **repeater** is a radio on a tower/hilltop that **receives your weak signal and
-re-transmits it with a big antenna and power**, massively extending range. To use one
-you set your radio to the repeater's **output frequency**, an **offset** (so it
-transmits on the input), and sometimes a **CTCSS "tone."** Local repeater lists
-(and emergency nets) are worth printing out for your area.
-
-### Simplex (radio-to-radio, no repeater)
-If repeaters are down, you talk **simplex** — directly, radio to radio, line of sight.
-The national 2m simplex calling frequency is **146.520 MHz**.
-
-### Ham digital & data (advanced, FYI)
-Hams can also send text/email/images with no internet via **Winlink** (email over
-radio), **FT8** (weak-signal), and **APRS** (position/text). Useful but needs more gear
-and practice.
+### Not for Germany
+**FRS/GMRS/MURS are US services** — don't buy/use them here (not permitted).
+Similarly **LPD433** has very low power (10 mW): fine for short range, not for emergencies.
 
 ---
 
-## 6. Shortwave (SWL) — hearing the outside world
+## 5. Amateur radio (*Amateurfunk*) — the serious emergency option
 
-- **What it is:** Using a **shortwave receiver** to *listen* to broadcasts on the HF
-  bands (roughly **1.8–30 MHz**). **No license needed to listen.**
-- **Why it matters:** When local media and internet are down, shortwave lets you hear
-  **international news, government/emergency broadcasts, and ham traffic** from far
-  away — because HF signals bounce worldwide.
-- **What to listen for:**
-  - **International broadcasters** (news from outside the affected area).
-  - **Germany:** no NOAA radio. Use a battery/crank **FM/DAB+ radio** (public broadcasters
-    carry Katwarn/NINA/DWD warnings), plus the **NINA** and **DWD WarnWetter** apps while online. Emergency number **112**.
-  - **Ham bands** (40m/20m) — to hear emergency nets and relays.
-  - **AM/FM broadcast** and **Emergency Alert System (EAS)** on a normal radio.
-- **Modes:** Broadcasts are usually **AM**; ham/utility voice is often **SSB**
-  (USB/LSB). A radio with SSB hears far more.
-- **Tip:** A simple long wire antenna dramatically improves shortwave reception.
+Amateur radio operators relay messages, coordinate help, and often support
+authorities (*Notfunk*, e.g. within **DARC** / DLRG / THW / Rescue services' support
+groups). Check local groups (*Ortsverband*, "OV") now — they know the area's repeaters.
 
----
+### Licensing (Germany, by BNetzA)
+Exam on two parts: **technology** and **operations/regulations** (*Technik* /
+*Betriebstechnik & Vorschriften*). The **question catalogue is public** (BNetzA
+website — **download it while you have internet**).
 
-## 7. Antennas, power & range (the practical stuff)
+| Class | Typical privileges (summary) |
+|---|---|
+| **N** (*Einsteigerklasse*, introduced 2024) | 10 m, 2 m, 70 cm; up to ~10 W — entry level |
+| **E** | VHF/UHF + parts of HF, up to ~100 W on some VHF/UHF, 10 W on HF |
+| **A** | all amateur bands, up to **750 W** |
 
-- **Antenna height beats power.** Getting the antenna up high (roof, tree, mast) adds
-  more range than buying a bigger amplifier.
-- **Use the right antenna for the band.** A proper **resonant** antenna (correct
-  length for the frequency) works far better than a random wire.
-- **Line of sight (VHF/UHF):** range ≈ limited by the horizon and obstructions. Height
-  = range. Repeaters overcome this.
-- **HF skip:** range changes with the **time of day** and **solar conditions**. Lower
-  bands (80m) are better at night; higher bands (20m) are better in daytime.
-- **Power:** keep radios charged. Stock **spare batteries, a 12V battery, a solar
-  panel, and car-charging cables.** A radio with a dead battery is a paperweight.
-- **Grounding & safety:** never put an antenna where it can touch power lines; ground
-  equipment to reduce static/lightning risk.
+*Privileges and power limits are summarized from memory — verify in the current AFuV
+(Amateurfunkverordnung) / BNetzA tables.* Call signs start with **DL / DK / DJ / DO / DB…**
+In a life-threatening emergency, calling for help is justified even without a license
+(see top), but you'll be far more effective if trained.
 
----
+### Main bands
+- **2 m (144–146 MHz, VHF)** and **70 cm (430–440 MHz, UHF):** local, **repeaters**.
+  - **2 m FM calling frequency (*Anruffrequenz*): 145.500 MHz**
+  - **70 cm FM calling frequency: 433.500 MHz**
+- **HF:** 80 m (3.5 MHz, regional at night), **40 m (7 MHz, regional day+night, standard
+  for regional nets)**, 20 m (14 MHz, long distance by day).
 
-## 8. How to call for help (procedure)
+### Repeaters (*Relais*)
+Receive on one frequency, re-send on another. Typical shift in Germany: **2 m: −0.6 MHz,
+70 cm: −7.6 MHz**; many need a **CTCSS tone** (often 67.0 Hz) or a **1750 Hz tone
+burst**. **Print the repeater list for your area** (DARC / local OV) now.
 
-1. **Listen first.** Make sure you're not interrupting other emergency traffic.
-2. **Use the emergency call:**
-   - Voice distress: say **"MAYDAY, MAYDAY, MAYDAY"** (life-threatening) or
-     **"PAN-PAN"** (urgent but not immediately life-threatening), then your info.
-   - On CB, call on **Channel 9**. On ham, break into the local **emergency net** or
-     call on a repeater / **146.520** simplex.
-3. **Give the essentials — slowly, clearly, repeat:**
-   - **Who** you are (name / call sign).
-   - **Where** you are (address, cross-streets, GPS coords, landmarks).
-   - **What** the emergency is (injury, fire, trapped, etc.).
-   - **What** you need (medical, rescue, relay a message).
-4. **Spell hard words with the phonetic alphabet** (below).
-5. **Stay on, don't wander off frequency.** Keep the radio on so responders can
-   call back. Repeat your message at intervals if no answer.
+### Simplex
+Talk directly (no repeater) on a simplex channel, e.g. 145.500 MHz. Works when repeaters
+are down — range is line of sight; go up a hill.
 
-### NATO phonetic alphabet
-Alpha Bravo Charlie Delta Echo Foxtrot Golf Hotel India Juliet Kilo Lima Mike
-November Oscar Papa Quebec Romeo Sierra Tango Uniform Victor Whiskey X-ray Yankee
-Zulu. Numbers: say digits individually ("one-two-zero").
-
-### Common "pro-words"
-- **"Over"** = I'm done talking, your turn.
-- **"Out"** = conversation finished (don't say "over and out").
-- **"Roger" / "Copy"** = I received and understand.
-- **"Say again"** = repeat (don't say "repeat").
-- **"Affirmative / Negative"** = yes / no.
-- **"Break"** = pause / someone with emergency traffic wants in.
+### Digital/text (advanced)
+Winlink (email over radio), FT8, APRS — need extra gear and training.
 
 ---
 
-## 9. A sensible emergency radio kit (shopping / checklist)
+## 6. Broadcast radio — warnings and news (the most important in practice)
 
-- [ ] **FM/DAB+ crank radio** (hand-crank/solar + battery) — warnings & forecasts (DE: no NOAA).
-- [ ] **Shortwave receiver with SSB** — hear news & ham traffic worldwide (RX only).
-- [ ] **A pair+ of GMRS radios** (and a **GMRS license**) — family/group, best bang
-      for buck. FRS works with no license at shorter range.
-- [ ] **A dual-band (2m/70cm) ham handheld (HT)** — cheap; huge capability with a
-      Technician license. Add a better antenna.
-- [ ] **(Advanced) An HF ham radio** + General license — true long distance.
-- [ ] **CB** if you travel by vehicle/convoy.
-- [ ] **Power:** spare batteries, 12V battery, **solar panel**, car charger.
-- [ ] **Better antennas** + coax; a roll of wire for an HF/long-wire antenna.
-- [ ] **Printed frequency card** (below), local repeater list, notebook & pencil.
+- **FM (*UKW*) and DAB+** are the main channels for official warnings and information.
+  Public broadcasters (ARD state radio, Deutschlandfunk) carry emergency
+  announcements. A **battery/crank/solar radio with FM and DAB+** is the single most
+  useful radio item.
+- **Medium/long wave (AM) broadcasting is largely switched off** in Germany — don't
+  rely on it for German stations.
+- **Shortwave (SWL)** (≈1.8–30 MHz): hear international broadcasters (BBC, Deutsche
+  Welle, etc.), time signals, ham traffic. **No license needed to receive.** A
+  receiver with **SSB** hears much more; a long-wire antenna improves reception.
+- **No NOAA weather radio in Germany.** Weather warnings: **DWD** (via apps, FM/DAB+
+  announcements).
+- Don't listen to BOS/authority or commercial radio (not permitted, § TKG).
+
+---
+
+## 7. Antennas, power & range
+
+- **Height beats power.** Roof/tree/mast adds more than any amplifier.
+- **PMR446/Freenet/CB:** limited power and (for PMR/Freenet) fixed antenna by law —
+  stay legal; improve range by **position** (hills, open ground, outside buildings).
+- **Resonant antenna for the band** beats random wire (ham).
+- **VHF/UHF:** range ≈ line of sight. **HF:** low bands better at night, high bands by day.
+- **Power:** spare batteries, power banks, **12 V battery**, **solar panel**, car charger.
+- **Safety:** keep antennas away from power lines; ground equipment against lightning.
+
+---
+
+## 8. How to call for help
+
+1. **Listen first** for ongoing emergency traffic.
+2. **Use the distress call:** **"MAYDAY, MAYDAY, MAYDAY"** (life in danger) or
+   **"PAN-PAN"** (urgent). In German, **"Notruf, Notruf, Notruf"** is understood too.
+   - **CB: Channel 9.** Ham: local emergency net, repeater, or **145.500 MHz** calling frequency.
+3. **Give the essentials slowly, then repeat:**
+   - **Who** (name/call sign) — **Where** (address, street, GPS, landmarks, *Rettungspunkt* / forest rescue point number) — **What** (injury, fire…) — **What you need**.
+4. **Spell hard words** (alphabets below). Say numbers digit by digit.
+5. **Stay on frequency**, repeat at intervals if no answer.
+
+### German spelling alphabet (DIN 5009)
+Anton, Ärger, Berta, Cäsar, Dora, Emil, Friedrich, Gustav, Heinrich, Ida, Julius,
+Kaufmann, Ludwig, Martha, Nordpol, Otto, Ökonom, Paula, Quelle, Richard, Samuel,
+Schule, Tanja, Ulrich, Übermut, Viktor, Wilhelm, Xanthippe, Ypsilon, Zacharias.
+For international contacts use **NATO**: Alpha Bravo Charlie Delta Echo Foxtrot Golf
+Hotel India Juliet Kilo Lima Mike November Oscar Papa Quebec Romeo Sierra Tango
+Uniform Victor Whiskey X-ray Yankee Zulu.
+
+### Pro-words (German / English)
+| German | English | Meaning |
+|---|---|---|
+| **Kommen** | Over | your turn |
+| **Ende** | Out | finished (not "Kommen und Ende") |
+| **Verstanden** | Roger / Copy | understood |
+| **Bitte wiederholen** | Say again | repeat |
+| **Positiv / Negativ** | Affirmative / Negative | yes / no |
+| **Warten** | Stand by | wait |
+
+---
+
+## 9. A sensible emergency radio kit
+
+- [ ] **FM/DAB+ crank/solar radio** — warnings & forecasts (top priority).
+- [ ] **Shortwave receiver with SSB** — international news (RX only).
+- [ ] **2+ PMR446 handhelds** (and spare batteries) — family/group, license-free.
+- [ ] **CB radio (FM/AM, DE-approved)** if you travel by vehicle.
+- [ ] **A dual-band 2 m/70 cm ham handheld** and Class E/N license — repeater access.
+- [ ] **(Advanced) HF ham radio** + Class A.
+- [ ] **Power:** spare batteries, power banks, 12 V battery, solar panel, car charger.
+- [ ] **Printed repeater list, this card, notebook & pencil.** Phones may be dead.
 
 ---
 
 ## 10. Print-and-keep frequency card
 
-Fill in your group's agreed channels and local repeaters, then print this page.
-
 ```
-=====================  EMERGENCY RADIO CARD  =====================
+=====================  EMERGENCY RADIO CARD (DE)  =====================
  Our group PRIMARY channel : _______________   Mode: _______
  Our group BACKUP channel  : _______________   Mode: _______
  Check-in times (daily)    : _______  _______  _______
 
- CB emergency / help ....... Channel 9
- CB highway / travel ....... Channel 19
- Ham 2m simplex calling .... 146.520 MHz  (FM)
- (US only) NOAA Weather Radio ... 162.400 / 162.425 / 162.450 /
-                             162.475 / 162.500 / 162.525 / 162.550 MHz
- FRS/GMRS family channel ... _______   (GMRS license #: __________)
+ Emergency number (phone)... 112 (fire/rescue)   110 (police)
+ CB emergency / help ....... Channel 9 (FM and AM)
+ CB traffic / travel ....... Channel 19 (FM)
+ PMR446 .................... 446.000 - 446.200 MHz, channels 1-16
+ Freenet ................... 149.0125 - 149.1125 MHz, channels 1-6
+ Ham 2 m calling ........... 145.500 MHz  (FM)
+ Ham 70 cm calling ......... 433.500 MHz  (FM)
+ Sirens: rising/falling 1 min = WARNING -> radio on; steady 1 min = ALL CLEAR
 
- Local repeaters (output / offset / tone):
+ Local repeaters (output / shift / tone):
    1) ________ MHz  /  ____  /  tone ______  (____________)
    2) ________ MHz  /  ____  /  tone ______  (____________)
    3) ________ MHz  /  ____  /  tone ______  (____________)
 
  Distress voice: "MAYDAY x3" (life threat) or "PAN-PAN x3" (urgent)
  Say: WHO you are - WHERE you are - WHAT's wrong - WHAT you need
-==================================================================
+=======================================================================
 ```
 
 ---
 
-## 11. Where to learn more offline (already in this kit)
+## 11. Where to learn more offline (in this kit)
 
-- **Appropedia** and **iFixit** archives (in `E:\Manuals\`, via the Kiwix reader)
-  include antenna, electronics and repair articles.
-- **WikiMed / Wikipedia-medicine** (`E:\Medical\`) for treating injuries while you
-  wait for help.
-- Study the **ham license question pools** (download them now while you have internet;
-  the exact questions and answers are public) so you can get licensed quickly.
+- `Deutschland\BBK-Ratgeber\` — official German preparedness guides.
+- `Deutschland\ZIM-Deutsch\` — German Wikipedia/Wikibooks/Wikivoyage (Kiwix).
+- `Deutschland\Woerterbuch\` — offline dictionary (see `HOW-TO-USE-DICTIONARY`).
+- **Appropedia / iFixit** (via Kiwix) for antenna/electronics articles.
+- Download the **Amateurfunk question catalogue** (BNetzA) while online.
 
-> Practice now: tune around, learn your radios' menus, program the channels above, and
-> do a test check-in with your group. Skills and muscle memory matter more than gear.
+> Practice now: program channels, test check-ins with your group, learn the menus.

@@ -55,7 +55,7 @@ $dirs = @(
  'Manuals\Survival-Water-Food','Manuals\Radio-Communications',
  'Medical','Medical\WikiMed','Medical\zimgit-medicine','Medical\Manuals-PDF',
  'Wikipedia','OsmAnd','Kiwix-Reader','Kiwix-Reader\app','Phone-Apps',
- 'Deutschland','Deutschland\BBK-Ratgeber','Deutschland\ZIM-Deutsch'
+ 'Deutschland','Deutschland\BBK-Ratgeber','Deutschland\ZIM-Deutsch','Deutschland\Woerterbuch'
 )
 foreach($d in $dirs){ New-Item -ItemType Directory -Force (Join-Path $Root $d) | Out-Null }
 
@@ -135,6 +135,8 @@ $zims = @(
  @{dir='https://download.kiwix.org/zim/wikipedia/';  pre='wikipedia_de_all_nopic_'; d='Deutschland\ZIM-Deutsch'}
  @{dir='https://download.kiwix.org/zim/wikibooks/';  pre='wikibooks_de_all_maxi_';  d='Deutschland\ZIM-Deutsch'}
  @{dir='https://download.kiwix.org/zim/wikivoyage/'; pre='wikivoyage_de_all_maxi_'; d='Deutschland\ZIM-Deutsch'}
+ @{dir='https://download.kiwix.org/zim/wiktionary/';  pre='wiktionary_de_all_nopic_'; d='Deutschland\Woerterbuch'}
+ @{dir='https://download.kiwix.org/zim/wiktionary/';  pre='wiktionary_en_all_nopic_'; d='Deutschland\Woerterbuch'}
 )
 foreach($z in $zims){
   $name = Latest-Zim $z.dir $z.pre
@@ -357,6 +359,7 @@ PlaceDoc 'Manuals-READ-ME-FIRST.md' (Join-Path $Root 'Manuals\READ-ME-FIRST')   
 PlaceDoc 'Medical-READ-ME-FIRST.md' (Join-Path $Root 'Medical\READ-ME-FIRST')                       'Medical - Read Me First'
 PlaceDoc 'RADIO-GUIDE.md'           (Join-Path $Root 'Manuals\Radio-Communications\RADIO-GUIDE')     'Emergency Radio Communications Guide'
 PlaceDoc 'HOW-TO-VIEW-MAPS.md'      (Join-Path $Root 'OsmAnd\HOW-TO-VIEW-MAPS')                      'Offline Maps - How to View'
+PlaceDoc 'HOW-TO-USE-DICTIONARY.md' (Join-Path $Root 'Deutschland\Woerterbuch\HOW-TO-USE-DICTIONARY') 'Offline Dictionary'
 PlaceDoc 'USE-ON-PHONE.md'          (Join-Path $Root 'Phone-Apps\USE-ON-PHONE')                      'Use the Library on a Phone'
 
 # ================================================================ README index
